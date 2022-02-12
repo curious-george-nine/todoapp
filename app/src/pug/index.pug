@@ -1,0 +1,39 @@
+doctype html
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Todo App
+    style
+      include css/style.css
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")
+  body.bg-slate-50.transition.duration-300(class="dark:bg-slate-700")
+    .absolute(class="top-[20px] right-[10px]")
+      a.bg-slate-400.text-white.py-2.px-3.cursor-pointer.select-none.rounded.transition.duration-300.capitalize#change-mode-btn(class="hover:bg-slate-500 dark:hover:bg-sky-500 active:ring-4 active:ring-slate-200 dark:active:ring-4 dark:active:ring-sky-300 active:outline-none dark:bg-sky-400")
+        | Change Mode
+    .px-12.py-8
+      .container.mx-auto.text-center
+        h1.text-3xl.text-sky-500.transition.duration-300(class="dark:text-sky-200") Todo App
+    .px-12.py-8
+      .container.mx-auto.text-center
+        div.mx-auto(class="w-[75%]")
+          form
+            div.grid.grid-cols-8
+              input.p-2.rounded-tl.rounded-bl.shadow-md.col-span-7.transition.duration-300.border.border-transparent(class="focus:outline-none focus:ring-2 focus:border focus:border-indigo-400 focus:ring-indigo-200 dark:bg-slate-500 dark:focus:ring-2 dark:focus:border dark:focus:border-slate-300 dark:focus:ring-slate-200 dark:text-white" type="text" autocomplete="off" aria-label="Add your Todo." placeholder="Add your TODO..." id="todo-input")
+
+              button.border-l.border-gray-400.bg-slate-200.rounded-tr.rounded-br.flex.justify-center.items-center.transition.duration-300.shadow-md(class="dark:bg-slate-400 focus:ring-2 focus:ring-indigo-300 dark:focus:ring-slate-200 dark:border-white" type="submit")
+                ion-icon.text-black.transition.duration-300(name="send-outline" class="dark:text-white")
+      .px-12.py-8
+        .container.mx-auto.text-center
+          .mx-auto.text-left.transition.duration-300(class="w-[75%] dark:text-white")
+            ul#todo-list
+    div.absolute.left-0.top-0.m-2(role="alert" hidden)
+      .bg-red-500.text-white.font-bold.rounded-t.px-4.py-2.uppercase
+        | An Error Occured
+      .border.border-t-0.border-red-400.rounded-b.bg-red-100.px-4.py-3.text-red-700
+        p Something went wrong. Please submit later again.
+    script(type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js")
+    script(nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js")
+    script
+      include js/index.js
