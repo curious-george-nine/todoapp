@@ -1,2 +1,2 @@
 # todoapp
- Todo App that based on Haml and jQuery.
+ Todo App that based on Pug and jQuery.
